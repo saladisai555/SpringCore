@@ -9,7 +9,8 @@ public class Main1 implements CommandLineRunner {
 
     @Autowired
     private ProductDao productDao;
-
+    @Autowired
+    private ProductDao1 productDao1;
     public static void main(String[] args) {
         SpringApplication.run(Main1.class, args);
     }
@@ -18,6 +19,7 @@ public class Main1 implements CommandLineRunner {
     public void run(String... args) {
 
         System.out.println(productDao.getAveragePrice());
+        System.out.println(productDao1.getAveragePrice());
 
     }
 }
