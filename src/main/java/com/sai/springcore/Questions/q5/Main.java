@@ -15,7 +15,7 @@ public class Main implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-                categoryInsDao.insert("a1","good but needs improvement");
-                categoryInsDao.insert("a2","good and best");
+        categoryInsDao.insert("a1","good but needs improvement");
+        categoryInsDao.insert("a2","good and best");
     }
 }
