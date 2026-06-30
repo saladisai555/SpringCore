@@ -1,51 +1,52 @@
 package com.sai.springcore.Questions.q7.Entity;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 @Entity
-@Table(name="product")
 public class Products {
+
     @Id
-    private int prod_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public String getProd_name() {
-        return prod_name;
-    }
+    private String name;
+    private double price;
 
-    public void setProd_name(String prod_name) {
-        this.prod_name = prod_name;
-    }
+    public Products() {}
 
-    public int getProd_id() {
-        return prod_id;
-    }
-
-    public void setProd_id(int prod_id) {
-        this.prod_id = prod_id;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
+    public Products(String name, double price) {
+        this.name = name;
         this.price = price;
     }
 
-    public String getCatCode() {
-        return catCode;
+    public Long getId() {
+        return id;
     }
 
-    public void setCatCode(String catCode) {
-        this.catCode = catCode;
+    public String getName() {
+        return name;
     }
 
-    private String prod_name;
-    private Double price;
-    private String catCode;
+    public double getPrice() {
+        return price;
+    }
 
-    public Products(){
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
     }
 
 
-
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
